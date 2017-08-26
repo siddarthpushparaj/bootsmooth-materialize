@@ -1,4 +1,4 @@
-# Materialize Wordpress Theme
+# Materialize Wordpress Theme Starter 
 
 A Wordpress Starter Theme built with Materialize and the [Timber Starter Theme](https://github.com/timber/starter-theme).
 
