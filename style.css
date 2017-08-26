@@ -8529,9 +8529,12 @@ body {
 
 nav {
   box-shadow: none; }
-  @media only screen and (min-width: 601px) {
+  nav .container, nav main, nav footer .footer-content, footer nav .footer-content {
+    position: relative; }
+  @media only screen and (max-width: 992px) {
     nav a.brand-logo {
-      padding: 0px 10px; } }
+      left: 0px;
+      transform: translateX(0); } }
 
 header {
   padding: 50px 0px;
@@ -8594,6 +8597,6 @@ footer {
     justify-content: center; }
 
 .single article {
-  padding-bottom: 50px;
-  margin-bottom: 50px;
+  padding-bottom: 25px;
+  margin-bottom: 25px;
   border-bottom: 1px solid #bdbdbd; }

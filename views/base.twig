@@ -7,35 +7,37 @@
 <body class="{{body_class}}" data-template="base.twig">
 	{% block navigtion %}
 	<nav role="navigation">
-		<div class="nav-wrapper">	
-			<div class="col s12">
-				<a href="/" class="brand-logo">
-					{{site.title}} 
-				</a>
-				<a href="#" data-activates="mobile-menu" class="button-collapse right"><i class="material-icons">menu</i></a>
-				<ul id="nav-mobile" class="right hide-on-med-and-down">
-				{% for item in menu.get_items %}
-					<li class="{{item.classes | join(' ')}}">
-						<a href="{{item.get_link}}">{{item.title}}</a>
-						{% include "menu.twig" with {'menu': item.get_children} %}
-					</li>
-				{% endfor %}
-					<li>
-						<a onclick="$app.showSearch();">Search</a>
-					</li>
-				</ul>
-				<ul class="side-nav" id="mobile-menu">
-				{% for item in menu.get_items %}
-					<li class="{{item.classes | join(' ')}}">
-						<a href="{{item.get_link}}">{{item.title}}</a>
-						{% include "menu.twig" with {'menu': item.get_children} %}
-					</li>
-				{% endfor %}
-					<li>
-						<a onclick="$app.showSearch();">Search</a>
-					</li>
-				</ul>
+		<div class="nav-wrapper">
+			<div class="container">	
+				<div class="col s12">
+					<a href="/" class="brand-logo">
+						{{site.title}} 
+					</a>
+					<ul id="nav-mobile" class="right hide-on-med-and-down">
+					{% for item in menu.get_items %}
+						<li class="{{item.classes | join(' ')}}">
+							<a href="{{item.get_link}}">{{item.title}}</a>
+							{% include "menu.twig" with {'menu': item.get_children} %}
+						</li>
+					{% endfor %}
+						<li>
+							<a onclick="$app.showSearch();">Search</a>
+						</li>
+					</ul>
+					<ul class="side-nav" id="mobile-menu">
+					{% for item in menu.get_items %}
+						<li class="{{item.classes | join(' ')}}">
+							<a href="{{item.get_link}}">{{item.title}}</a>
+							{% include "menu.twig" with {'menu': item.get_children} %}
+						</li>
+					{% endfor %}
+						<li>
+							<a onclick="$app.showSearch();">Search</a>
+						</li>
+					</ul>
+				</div>
 			</div>
+			<a href="#" data-activates="mobile-menu" class="button-collapse right"><i class="material-icons">menu</i></a>
 		</div>
 	</nav>
 	{% endblock %}
