@@ -18,9 +18,12 @@ A Wordpress Starter Theme built with Materialize and the [Timber Starter Theme](
 ### Activating the theme
 
 1. Login to the WordPress admin panel
-2. Go to Appearance > Themes
-3. Select Bootsmooth Materialize
-4. Click Activate and reload the site
+2. Go to Plugins > Add New
+3. Install and Activate**Timber** Plugin
+4. Go to Appearance > Themes
+5. Select Bootsmooth Materialize
+6. Click Activate
+7. Visit the site
 
 ## Customizing the stylesheet
 
