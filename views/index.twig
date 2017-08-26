@@ -1,0 +1,17 @@
+{% extends "base.twig" %}
+
+{% block content %}
+<div class="row posts-row">
+{% for post in posts %}
+    <div class="col s12 m4 post-tease">
+	{% include ['tease-'~post.post_type~'.twig', 'tease.twig'] %}
+	</div>
+{% endfor %}
+</div>
+{% include 'pagination.twig' %}
+{% endblock %}
+
+{% block footer %}
+{{ parent() }}
+{% include 'masonry-js.twig' %}
+{% endblock %}

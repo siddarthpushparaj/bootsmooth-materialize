@@ -1,0 +1,139 @@
+/*!
+Theme Name: Bootsmooth Materialize
+Theme URI: http://bootsmooth.com/materialize/
+Author: Clarence Pearson
+Author URI:  http://bootsmooth.com/author
+Description: WordPress Theme for Developers
+Version: 1.0.0
+License: GPL 
+License URI: http://bootsmooth.com/license
+Text Domain: 
+Tags:
+*/
+@import "../node_modules/materialize-css/sass/components/mixins";
+@import "../node_modules/materialize-css/sass/components/color";
+
+@import "variables";
+@import "text-shadow";
+
+@import "../node_modules/materialize-css/sass/materialize";
+
+body {
+    background-color: color("grey", "lighten-5");
+}
+
+nav {
+    box-shadow: none;
+    a.brand-logo {
+        @media #{$medium-and-up} {
+            padding: 0px 10px;
+        }
+    }
+}
+
+header {
+    @extend .z-depth-1;
+    
+    padding: 50px 0px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-color: $primary-color;
+    color: white;
+    
+    @media #{$small-and-down} {
+        padding: 10px 0px;
+    }
+}
+
+.container {
+    max-width: 960px;
+    width: 85%;
+}
+
+main {
+    @extend .container;
+    margin: 50px auto;
+    
+    @media #{$small-and-down} {
+        margin: 25px auto;
+    }
+}
+
+footer {
+    @extend .page-footer;
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    padding: 0;
+    
+    .footer-content {
+        @extend .container;
+        padding: 20px 0px;
+    }
+    
+    .footer-copyright {
+        width: 100%;
+    }
+    
+    .row {
+        margin-bottom: 0px;
+    }
+    
+    .site-title {
+        font-weight: 600;
+    }
+    
+    ul {
+        margin-top: 0;
+    }
+}
+
+// blog styles
+.post-meta {
+    margin: 10px 0px;
+    i.material-icons {
+        vertical-align: middle;
+    }
+}
+
+// horizontal blog styles
+.flex-row {
+    display: flex;
+    flex-wrap: wrap;
+    
+    .col {
+        // remove Materialize's left margin on columns
+        margin-left: 0 !important;
+    }
+}
+
+.posts-row {
+    @extend .flex-row;
+    flex-wrap: wrap;
+}
+
+.card {
+    .card-image {
+        overflow: hidden;
+        position: relative;
+
+        .card-title {
+            text-shadow: materialShadow(1, color('grey','darken-4'));
+            z-index: 3;
+        }
+
+        .card-icon {
+            @extend .valign-wrapper;
+            padding: 10px;
+            justify-content: center;
+        }
+    }
+}
+// single blog post styles
+.single {
+    article {
+        padding-bottom: 50px;
+        margin-bottom: 50px;
+        border-bottom: 1px solid color('grey','lighten-1');
+    }
+}

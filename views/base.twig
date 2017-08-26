@@ -1,0 +1,78 @@
+{% block html_head_container %}
+{% include 'html-header.twig' %}
+	{% block head %}
+	{% endblock %}
+	</head>
+{% endblock %}
+<body class="{{body_class}}" data-template="base.twig">
+	{% block navigtion %}
+	<nav role="navigation">
+		<div class="nav-wrapper">	
+			<div class="col s12">
+				<a href="/" class="brand-logo">
+					{{site.title}} 
+				</a>
+				<a href="#" data-activates="mobile-menu" class="button-collapse right"><i class="material-icons">menu</i></a>
+				<ul id="nav-mobile" class="right hide-on-med-and-down">
+				{% for item in menu.get_items %}
+					<li class="{{item.classes | join(' ')}}">
+						<a href="{{item.get_link}}">{{item.title}}</a>
+						{% include "menu.twig" with {'menu': item.get_children} %}
+					</li>
+				{% endfor %}
+					<li>
+						<a onclick="$app.showSearch();">Search</a>
+					</li>
+				</ul>
+				<ul class="side-nav" id="mobile-menu">
+				{% for item in menu.get_items %}
+					<li class="{{item.classes | join(' ')}}">
+						<a href="{{item.get_link}}">{{item.title}}</a>
+						{% include "menu.twig" with {'menu': item.get_children} %}
+					</li>
+				{% endfor %}
+					<li>
+						<a onclick="$app.showSearch();">Search</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</nav>
+	{% endblock %}
+	
+	{% if post.get_thumbnail %}
+	<header style="background-image: url({{post.thumbnail.src}});">
+	{% else %}
+	<header>
+	{% endif %}
+	    <div class="container">
+	    	{% block heading %}
+	        <h1>{{post.post_title}}</h1>
+	        {% endblock %}
+	    </div>
+	</header>
+	<main role="main">
+	{% block content %}
+		Sorry, no content
+	{% endblock %}
+	</main>
+	{% block footer %}
+	<footer>
+		{% include 'footer.twig' %}
+	</footer>
+	<div id="searchModal" class="modal">
+		<div class="modal-content">
+			{% include 'form-search.twig' %}
+		</div>
+		<div class="modal-footer">
+	      <a onclick="$app.closeSearch()" class="modal-action modal-close waves-effect waves-green btn-flat">Cancel</a>
+	    </div>
+	</div>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.1/js/materialize.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/masonry/4.2.0/masonry.pkgd.min.js"></script>
+	<script src="{{site.theme.link}}/dist/build.js"></script>
+	{{ function('wp_footer') }}
+	{% endblock %}
+</body>
+</html>

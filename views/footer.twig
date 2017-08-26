@@ -1,0 +1,15 @@
+<div class="footer-content">
+    <div class="row flex-row footer-links">
+        {% for item in menu.get_items %}
+        <div class="col s12 m3 l2">
+        	<a class="white-text" href="{{item.get_link}}">{{item.title}}</a>
+        </div>
+        {% endfor %}
+        </div>
+    </div>
+</div>
+<div class="footer-copyright">
+    <div class="container">
+        <span class="site-title">{{site.title}}</span> - <span class="site-description">{{site.description}}</span> | Copyright &copy; {{ 'now'|date('Y') }} 
+    </div>
+</div>

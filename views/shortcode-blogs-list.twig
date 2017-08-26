@@ -1,0 +1,6 @@
+<ul class="collection with-header z-depth-1">
+    <li class="collection-header"><h5>Latest Posts</h5></li>
+    {% for post in blogs %}
+    <li class="collection-item"><a href="{{post.link}}">{{post.title}}</a></li>
+    {% endfor %}
+</ul>

@@ -1,0 +1,25 @@
+{% extends "base.twig" %}
+
+{% block heading %}
+<h1>{{post.title}}</h1>
+<div class="post-meta">
+	<div class="col s12 m4">
+		<i class="material-icons">access_time</i> {{ post.post_date|date('F j, Y') }}
+	</div>
+	<div class="col s12 m4">
+		 <i class="material-icons">person</i> {{ post.author.name }}
+	</div>
+</div>
+{% endblock %}
+
+{% block content %}
+<article class="post-type-{{post.post_type}}" id="post-{{post.ID}}">
+	{{post.content}}
+</article>
+<h5>Latest Posts</h5>
+{% filter shortcodes  %}
+	[blogs]
+{% endfilter %}
+</div>
+
+{% endblock %}

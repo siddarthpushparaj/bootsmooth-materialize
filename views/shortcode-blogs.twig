@@ -1,0 +1,16 @@
+<div class="row posts-row">
+{% for post in blogs %}
+<div class="col s12 m4 post-tease">
+    <div class="card hoverable">
+    	<div class="card-content">
+    		<a href="{{post.link}}"><span class="card-title">{{post.title}}</span></a>
+    		<div class="post-meta">
+    			<p>
+    				<i class="material-icons">access_time</i> {{ post.post_date|date('F j, Y') }}
+    			</p>
+    		</div>
+    	</div>
+    </div>
+</div>
+{% endfor %}
+</div>

@@ -1,0 +1,15 @@
+@function materialShadow($depth, $color) {
+  
+    $textShadows: ();
+    $i: 0;
+    
+    @while $i < $depth {
+        $i: $i + 1;
+        $offset-x: $i+px;
+        $offset-y: $i+px;
+        $blur: 0;
+        $textShadows: append($textShadows, $offset-y $offset-x $blur $color, 'comma');
+    }
+    
+    @return $textShadows;
+}
