@@ -44,6 +44,7 @@ header {
     background-size: cover;
     background-repeat: no-repeat;
     background-color: $primary-color;
+    background-position: center;
     color: white;
     
     @media #{$small-and-down} {

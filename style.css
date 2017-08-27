@@ -8541,6 +8541,7 @@ header {
   background-size: cover;
   background-repeat: no-repeat;
   background-color: #F44336;
+  background-position: center;
   color: white; }
   @media only screen and (max-width: 600px) {
     header {
