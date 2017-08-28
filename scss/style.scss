@@ -33,6 +33,9 @@ nav {
             left: 0px;
             transform: translateX(0);
         }
+        @media #{$small-and-down} {
+            font-size: 1.25rem;
+        }
     }
 }
 
@@ -54,6 +57,10 @@ header {
 .container {
     max-width: 960px;
     width: 85%;
+    
+    @media #{$small-and-down} {
+        width: 90%;
+    }
 }
 
 main {

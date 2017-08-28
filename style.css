@@ -8535,6 +8535,9 @@ nav {
     nav a.brand-logo {
       left: 0px;
       transform: translateX(0); } }
+  @media only screen and (max-width: 600px) {
+    nav a.brand-logo {
+      font-size: 1.25rem; } }
 
 header {
   padding: 50px 0px;
@@ -8550,6 +8553,9 @@ header {
 .container, main, footer .footer-content {
   max-width: 960px;
   width: 85%; }
+  @media only screen and (max-width: 600px) {
+    .container, main, footer .footer-content {
+      width: 90%; } }
 
 main {
   margin: 50px auto; }
